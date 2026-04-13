@@ -38,7 +38,7 @@ const StyledWrapper = styled.div`
     display: block;
     height: 5px;
     width: 100%;
-    background: #f07232;
+    background: #cba964;
     border-radius: 9px;
     opacity: 1;
     right: 0;

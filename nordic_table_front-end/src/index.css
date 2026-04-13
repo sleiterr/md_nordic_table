@@ -1,60 +1,47 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 @import "tailwindcss";
 @import "tailwindcss/utilities";
 
 @theme {
-    --color-body: gray;
-    --color-portfolio: #212121;
+    /* Base colors */
+    --color-body: #fff;
+    --color-footer: rgba(31, 31, 31, 1);
 
-    --color-footer: #000;
 
-    --color-menu-bg: #000000;
+    /*nav_menu*/
+    --color-menu-hover: #7C632F;
+    --color-menu-border: #5F5F5F;
+    --color-menu-bg: rgba(247, 245, 242, 1);
 
-    --color-hero-overlay: rgba(0, 0, 0, 0.30);
-    --color-footer-overlay: rgba(0, 0, 0, 0.80);
+    /*text colors*/
+    --color-primary: #fff;
+    --color-secondary: #000000;
+    --color-tertiary: #7C632F;
+    --color-quaternary: #1A1A1A;
 
-    --color-primary: #F07232;
-    --color-secondary: #fff;
-
-    --color-card-border: rgba(153, 153, 153, 0.39);
-
-    --color-accordion-primary: #000000;
-    --color-accordion-secondary: #000000;
-
-    --color-link: #F07232;
-    --color-arrow-slider: rgba(242, 157, 56, 1);
-    --color-arrow-dot: rgba(153, 153, 153, 0.37);
-    --color-arrow-active: rgba(242, 157, 56, 1);
-    --color-arrow-bg: rgba(28, 28, 28, 0.3);
-
-    --color-card-bg: rgba(153, 153, 153, 0.2);
-    --color-quote-bg: #999;
+    --color-card-quote: #7C632F;
 
     /*form colors*/
-    --color-dark-slider: #777;
-    --color-form-border: rgba(255, 255, 255, 0.8);
-    --color-form-btn: rgba(119, 119, 119, 0.95);
+    --color-form-border: rgba(145, 107, 28, 0.61);
+    --color-form-btn: rgba(124, 99, 47, 1);
     --color-focus-border: #E54E41;
-    --color-form-bg: #E54E41;
-    --color-form-icon: rgba(240, 114, 50, 1);
-    --color-input-custom: rgba(153, 153, 153, 1);
+    --color-form-icon: rgba(183, 183, 183, 1);
 
     /* btn custom */
-    --color-btn-border: rgba(240, 114, 50, 1);
-    --color-btn-text: rgba(240, 114, 50, 1);
-    --color-button-hover-bg: #E23E3C;
+    --color-btn-border: rgba(26, 26, 26, 0.35);
+    --color-btn-outline-border: rgba(255, 255, 255, 1);
+    --color-btn-dsih-border: rgba(0, 0, 0, 1);
+
+    --color-btn-text: rgba(124, 99, 47, 1);
+    --color-button-hover-bg: rgba(100, 80, 38, 1);
 
 
-    /* hero gradient-fog */
-    --gradient-hero-fog: linear-gradient(to top,
-            rgba(0, 0, 0, 1) 0%,
-            rgba(0, 0, 0, 0.9) 15%,
-            rgba(0, 0, 0, 0.2) 46%,
-            rgba(0, 0, 0, 0) 100%);
-    /* footer-color */
-    --color-primary-footer: #fff;
-    --color-secondary-footer: #F07232;
+    /* footer */
+    --color-primary-footer: #5F5F5F;
+    --color-secondary-footer: #CCCCCC;
+    --color-footer-icon: #CBA964;
+    --color-footer-copyright: #FFFFFF;
 
     /* LoginNav */
     --color-icon-overlay: rgba(255, 255, 255, 0.18);
@@ -62,16 +49,17 @@
 
 
     /* fonts */
-    --font-cormorant: "Cormorant", serif;
-    --font-quicksand: "Quicksand", sans-serif;
+    --font-cormorant: "Cormorant Garamond", serif;
+    --font-inter: "Inter", sans-serif;
 }
 
 :root {
-    --font-quicksand: "Quicksand", sans-serif;
+    --font-inter: "Inter", sans-serif;
+    ;
 }
 
 html {
-    font-family: var(--font-quicksand);
+    font-family: var(--font-inter);
     scroll-behavior: smooth;
     overflow-x: hidden;
 }
