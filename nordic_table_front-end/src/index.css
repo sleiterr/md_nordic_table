@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Quicksand:wght@300..700&display=swap');
+
+@import "tailwindcss";
+@import "tailwindcss/utilities";
+
+@theme {
+    --color-body: gray;
+    --color-portfolio: #212121;
+
+    --color-footer: #000;
+
+    --color-menu-bg: #000000;
+
+    --color-hero-overlay: rgba(0, 0, 0, 0.30);
+    --color-footer-overlay: rgba(0, 0, 0, 0.80);
+
+    --color-primary: #F07232;
+    --color-secondary: #fff;
+
+    --color-card-border: rgba(153, 153, 153, 0.39);
+
+    --color-accordion-primary: #000000;
+    --color-accordion-secondary: #000000;
+
+    --color-link: #F07232;
+    --color-arrow-slider: rgba(242, 157, 56, 1);
+    --color-arrow-dot: rgba(153, 153, 153, 0.37);
+    --color-arrow-active: rgba(242, 157, 56, 1);
+    --color-arrow-bg: rgba(28, 28, 28, 0.3);
+
+    --color-card-bg: rgba(153, 153, 153, 0.2);
+    --color-quote-bg: #999;
+
+    /*form colors*/
+    --color-dark-slider: #777;
+    --color-form-border: rgba(255, 255, 255, 0.8);
+    --color-form-btn: rgba(119, 119, 119, 0.95);
+    --color-focus-border: #E54E41;
+    --color-form-bg: #E54E41;
+    --color-form-icon: rgba(240, 114, 50, 1);
+    --color-input-custom: rgba(153, 153, 153, 1);
+
+    /* btn custom */
+    --color-btn-border: rgba(240, 114, 50, 1);
+    --color-btn-text: rgba(240, 114, 50, 1);
+    --color-button-hover-bg: #E23E3C;
+
+
+    /* hero gradient-fog */
+    --gradient-hero-fog: linear-gradient(to top,
+            rgba(0, 0, 0, 1) 0%,
+            rgba(0, 0, 0, 0.9) 15%,
+            rgba(0, 0, 0, 0.2) 46%,
+            rgba(0, 0, 0, 0) 100%);
+    /* footer-color */
+    --color-primary-footer: #fff;
+    --color-secondary-footer: #F07232;
+
+    /* LoginNav */
+    --color-icon-overlay: rgba(255, 255, 255, 0.18);
+    --color-hover-icon: rgba(255, 255, 255, 0.3);
+
+
+    /* fonts */
+    --font-cormorant: "Cormorant", serif;
+    --font-quicksand: "Quicksand", sans-serif;
+}
+
+:root {
+    --font-quicksand: "Quicksand", sans-serif;
+}
+
+html {
+    font-family: var(--font-quicksand);
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: var(--color-body);
+    color: var(--color-secondary);
+    list-style: none;
+    overflow-x: hidden;
+}

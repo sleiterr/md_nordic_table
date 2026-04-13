@@ -1,0 +1,653 @@
+{
+  "info": {
+    "_postman_id": "b9d11a07-12cf-4bab-b19e-7dae7cc27959",
+    "name": "MCD - Nordic Table",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "19586236",
+    "_collection_link": "https://go.postman.co/collection/19586236-b9d11a07-12cf-4bab-b19e-7dae7cc27959?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "Users",
+          "item": [
+            {
+              "name": "Get Users",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{server_path}}/users",
+                  "host": [
+                    "{{server_path}}"
+                  ],
+                  "path": [
+                    "users"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "User",
+          "item": [
+            {
+              "name": "Add User",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "authorization",
+                    "value": "Bearer {{token}}",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "name",
+                      "value": "Postman",
+                      "type": "text"
+                    },
+                    {
+                      "key": "password",
+                      "value": "postman",
+                      "type": "text"
+                    },
+                    {
+                      "key": "email",
+                      "value": "postman@mediacollege.dk",
+                      "type": "text"
+                    },
+                    {
+                      "key": "file",
+                      "type": "file",
+                      "fileNotInWorkingDirectoryWarning": "This file isn't in your working directory. Teammates you share this request with won't be able to use this file. To make collaboration easier you can setup your working directory in Settings.",
+                      "filesNotInWorkingDirectory": [
+                        "/C:/MCDM_Arsenalet/One Day Viborg/materialer/Moments/2024 Jamal/image003.jpg"
+                      ],
+                      "value": null
+                    },
+                    {
+                      "key": "role",
+                      "value": "guest",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{server_path}}/user",
+                  "host": [
+                    "{{server_path}}"
+                  ],
+                  "path": [
+                    "user"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Update User",
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "authorization",
+                    "value": "Bearer {{token}}",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "id",
+                      "value": "67a321882e6f0721a24cdc35",
+                      "type": "text"
+                    },
+                    {
+                      "key": "name",
+                      "value": "Postman Pat",
+                      "type": "text"
+                    },
+                    {
+                      "key": "email",
+                      "value": "postman@mediacollege.dk",
+                      "type": "text"
+                    },
+                    {
+                      "key": "file",
+                      "type": "file",
+                      "src": "/C:/Users/AnneLundMøller/Desktop/Billeder/ninja.png"
+                    },
+                    {
+                      "key": "password",
+                      "value": "1234",
+                      "type": "text",
+                      "disabled": true
+                    },
+                    {
+                      "key": "role",
+                      "value": "guest",
+                      "type": "text",
+                      "disabled": true
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{server_path}}/user",
+                  "host": [
+                    "{{server_path}}"
+                  ],
+                  "path": [
+                    "user"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Delete User",
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "authorization",
+                    "value": "Bearer {{token}}",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": []
+                },
+                "url": {
+                  "raw": "{{server_path}}/user/67a46fccae8b6065ad641467",
+                  "host": [
+                    "{{server_path}}"
+                  ],
+                  "path": [
+                    "user",
+                    "67a46fccae8b6065ad641467"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Get User ID",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{server_path}}/user/67a46f8d775a152ea7a1601a",
+                  "host": [
+                    "{{server_path}}"
+                  ],
+                  "path": [
+                    "user",
+                    "67a46f8d775a152ea7a1601a"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "SignIn",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\" : \"admin@mediacollege.dk\",\r\n    \"password\" : \"admin\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{server_path}}/auth/signin",
+              "host": [
+                "{{server_path}}"
+              ],
+              "path": [
+                "auth",
+                "signin"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Token Check",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OWQ2MDczZDE3NWQzMWMwZDdiYjEyOTMiLCJlbWFpbCI6ImFkbWluQG1lZGlhY29sbGVnZS5kayIsIm5hbWUiOiJhZG1pbiIsInBpY3R1cmUiOiJodHRwOi8vbG9jYWxob3N0OjMwNDIvdXNlcnMvbm8tdXNlci5qcGciLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NzU2NDIwOTgsImV4cCI6MTc3NTcyODQ5OH0.o1cIKabbhM5TFO6i9Pjicr0QdpL4UpLyKEyrs2H7Bs4\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{server_path}}/auth/token",
+              "host": [
+                "{{server_path}}"
+              ],
+              "path": [
+                "auth",
+                "token"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Dishes",
+      "item": [
+        {
+          "name": "Dishes",
+          "item": [
+            {
+              "name": "Get All Dishes",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{server_path}}/dishes",
+                  "host": [
+                    "{{server_path}}"
+                  ],
+                  "path": [
+                    "dishes"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Dish",
+          "item": [
+            {
+              "name": "Post Dish",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "authorization",
+                    "value": "Bearer {{token}}",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "title",
+                      "value": "Postman Special",
+                      "type": "text"
+                    },
+                    {
+                      "key": "image",
+                      "type": "file",
+                      "src": "/C:/Users/AnneLundMøller/Desktop/Billeder/maguerit.png"
+                    },
+                    {
+                      "key": "price",
+                      "value": "200",
+                      "type": "text"
+                    },
+                    {
+                      "key": "description",
+                      "value": "Lækker ny ret fra Nordic Table",
+                      "type": "text"
+                    },
+                    {
+                      "key": "isSignature",
+                      "value": "true",
+                      "type": "text"
+                    },
+                    {
+                      "key": "category",
+                      "value": "main",
+                      "type": "text",
+                      "uuid": "24282972-fb54-40df-a84e-fa4b8c80273c"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{server_path}}/dish",
+                  "host": [
+                    "{{server_path}}"
+                  ],
+                  "path": [
+                    "dish"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Update Dish",
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "authorization",
+                    "value": "Bearer {{token}}",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "id",
+                      "value": "699c263f9a520552cbd2094f",
+                      "type": "text"
+                    },
+                    {
+                      "key": "title",
+                      "value": "Postman Special update",
+                      "type": "text"
+                    },
+                    {
+                      "key": "image",
+                      "type": "file",
+                      "fileNotInWorkingDirectoryWarning": "This file isn't in your working directory. Teammates you share this request with won't be able to use this file. To make collaboration easier you can setup your working directory in Settings.",
+                      "filesNotInWorkingDirectory": [
+                        "/C:/MCDM_Arsenalet/One Day Viborg/materialer/Willbeck.jpg"
+                      ],
+                      "src": "/C:/MCDM_Arsenalet/One Day Viborg/materialer/Willbeck.jpg",
+                      "disabled": true
+                    },
+                    {
+                      "key": "price",
+                      "value": "200",
+                      "type": "text",
+                      "disabled": true
+                    },
+                    {
+                      "key": "description",
+                      "value": "Lækker ny titel til retten",
+                      "type": "text"
+                    },
+                    {
+                      "key": "category",
+                      "value": "main",
+                      "type": "text",
+                      "disabled": true
+                    },
+                    {
+                      "key": "isSignature",
+                      "value": "false",
+                      "type": "text",
+                      "uuid": "c2d43ade-e7b6-45c5-bdc9-02767d881343"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{server_path}}/dish",
+                  "host": [
+                    "{{server_path}}"
+                  ],
+                  "path": [
+                    "dish"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Delete Dish By ID",
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "authorization",
+                    "value": "Bearer {{token}}",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{server_path}}/dish/699c263f9a520552cbd2094f",
+                  "host": [
+                    "{{server_path}}"
+                  ],
+                  "path": [
+                    "dish",
+                    "699c263f9a520552cbd2094f"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Get Dish By ID",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{server_path}}/dish/699c263f9a520552cbd2094f",
+                  "host": [
+                    "{{server_path}}"
+                  ],
+                  "path": [
+                    "dish",
+                    "699c263f9a520552cbd2094f"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Bookings",
+      "item": [
+        {
+          "name": "Bookings",
+          "item": [
+            {
+              "name": "Get All Bookings",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{server_path}}/bookings",
+                  "host": [
+                    "{{server_path}}"
+                  ],
+                  "path": [
+                    "bookings"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Booking",
+          "item": [
+            {
+              "name": "Post Booking",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "authorization",
+                    "value": "Bearer {{token}}",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"Postman\",\r\n    \"email\": \"postman@mail.com\",\r\n    \"startAt\": \"2026-03-15T18:30:00\",\r\n    \"numberOfGuests\": 4,\r\n    \"status\": \"new\" \r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{server_path}}/booking",
+                  "host": [
+                    "{{server_path}}"
+                  ],
+                  "path": [
+                    "booking"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Update Booking",
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "authorization",
+                    "value": "Bearer {{token}}",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"id\": \"699c27c99a520552cbd20959\",\r\n    \"name\": \"Postman update\",\r\n    \"email\": \"postman@mail.com\",\r\n    \"startAt\": \"2026-03-15T18:30:00\",\r\n    \"numberOfGuests\": 2\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{server_path}}/booking",
+                  "host": [
+                    "{{server_path}}"
+                  ],
+                  "path": [
+                    "booking"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Delete Booking By ID",
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "authorization",
+                    "value": "Bearer {{token}}",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{server_path}}/booking/699c27c99a520552cbd20959",
+                  "host": [
+                    "{{server_path}}"
+                  ],
+                  "path": [
+                    "booking",
+                    "699c27c99a520552cbd20959"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Get Booking By ID",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{server_path}}/booking/699c27c99a520552cbd20959",
+                  "host": [
+                    "{{server_path}}"
+                  ],
+                  "path": [
+                    "booking",
+                    "699c27c99a520552cbd20959"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Change Booking Status",
+              "request": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "authorization",
+                    "value": "Bearer {{token}}",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"status\": \"cancelled\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{server_path}}/booking/699c247db7ebf6de3bf6b4b1/status",
+                  "host": [
+                    "{{server_path}}"
+                  ],
+                  "path": [
+                    "booking",
+                    "699c247db7ebf6de3bf6b4b1",
+                    "status"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "server_path",
+      "value": ""
+    }
+  ]
+}
