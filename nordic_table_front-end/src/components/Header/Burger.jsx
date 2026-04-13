@@ -52,11 +52,9 @@ const StyledWrapper = styled.div`
   }
 
   .burger span:nth-of-type(2) {
-    right: -8px;
     top: 50%;
-    width: 40px;
     transform: translateY(-50%);
-    transform-origin: right center;
+    transform-origin: left center;
   }
 
   .burger span:nth-of-type(3) {
@@ -66,7 +64,7 @@ const StyledWrapper = styled.div`
 
   .burger input:checked ~ span:nth-of-type(1) {
     transform: rotate(45deg);
-
+    background: #929292;
     top: -4px;
     left: 5px;
   }
@@ -77,6 +75,7 @@ const StyledWrapper = styled.div`
   }
 
   .burger input:checked ~ span:nth-of-type(3) {
+    background: #929292;
     transform: rotate(-45deg);
     top: 28px;
     left: 5px;

@@ -11,7 +11,7 @@
 
     /*nav_menu*/
     --color-menu-hover: #7C632F;
-    --color-menu-border: #5F5F5F;
+    --color-menu-border: rgba(95, 95, 95, 0.18);
     --color-menu-bg: rgba(247, 245, 242, 1);
 
     /*text colors*/
@@ -19,6 +19,8 @@
     --color-secondary: #000000;
     --color-tertiary: #7C632F;
     --color-quaternary: #1A1A1A;
+    --color-caption: #B39659;
+    --color-border-caption: #B39659;
 
     --color-card-quote: #7C632F;
 
@@ -29,8 +31,9 @@
     --color-form-icon: rgba(183, 183, 183, 1);
 
     /* btn custom */
+    --color-btn-bg: #7C632F;
     --color-btn-border: rgba(26, 26, 26, 0.35);
-    --color-btn-outline-border: rgba(255, 255, 255, 1);
+    --color-btn-outline: rgba(255, 255, 255, 1);
     --color-btn-dsih-border: rgba(0, 0, 0, 1);
 
     --color-btn-text: rgba(124, 99, 47, 1);
