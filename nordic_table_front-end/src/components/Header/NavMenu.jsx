@@ -1,10 +1,27 @@
 import React from "react";
 import { jwtDecode } from "jwt-decode";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import clsx from "clsx";
 
-const NavMenu = ({ handleLinkClick, isLoggedIn, onLogout, token }) => {
+const NavMenu = ({
+  handleLinkClick: closeMenu,
+  isLoggedIn,
+  onLogout,
+  token,
+}) => {
+  // Get the current location to determine if we are on the home page
+  const location = useLocation();
   const role = token ? jwtDecode(token).role : null;
+
+  // Handle click on home link to scroll to top if already on home page
+  const handleHomeClick = (e) => {
+    closeMenu();
+
+    if (location.pathname === "/") {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
 
   return (
     <div className="mt-12 ml-4 md:mt-0 md:ml-0">
@@ -17,7 +34,7 @@ const NavMenu = ({ handleLinkClick, isLoggedIn, onLogout, token }) => {
               "font-cormorant font-medium text-secondary text-3xl md:text-4xl tracking-wide",
               "hover:text-menu-hover transition-all duration-300",
             )}
-            onClick={handleLinkClick}
+            onClick={handleHomeClick}
           >
             Forside
           </Link>
@@ -33,7 +50,7 @@ const NavMenu = ({ handleLinkClick, isLoggedIn, onLogout, token }) => {
               "font-cormorant font-medium text-secondary text-3xl md:text-4xl tracking-wide",
               "hover:text-menu-hover transition-all duration-300",
             )}
-            onClick={handleLinkClick}
+            onClick={closeMenu}
           >
             Menu
           </Link>
@@ -49,7 +66,7 @@ const NavMenu = ({ handleLinkClick, isLoggedIn, onLogout, token }) => {
               "font-cormorant font-medium text-secondary text-3xl md:text-4xl tracking-wide",
               "hover:text-menu-hover transition-all duration-300",
             )}
-            onClick={handleLinkClick}
+            onClick={closeMenu}
           >
             Book bord
           </Link>
@@ -68,7 +85,7 @@ const NavMenu = ({ handleLinkClick, isLoggedIn, onLogout, token }) => {
                   "hover:text-menu-hover transition-all duration-300",
                 )}
                 onClick={() => {
-                  handleLinkClick();
+                  closeMenu();
                 }}
               >
                 Dashboard
@@ -88,7 +105,7 @@ const NavMenu = ({ handleLinkClick, isLoggedIn, onLogout, token }) => {
                 "font-cormorant font-medium text-secondary text-3xl md:text-4xl tracking-wide",
                 "hover:text-menu-hover transition-all duration-300",
               )}
-              onClick={handleLinkClick}
+              onClick={closeMenu}
             >
               Login
             </Link>

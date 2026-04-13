@@ -3,7 +3,6 @@ import heroBg from "../../assets/header/headerbg.png";
 import Button from "../Button/Button";
 import clsx from "clsx";
 
-// button mt-5
 const heroText = [
   {
     id: 1,

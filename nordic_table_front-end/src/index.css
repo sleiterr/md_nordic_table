@@ -5,7 +5,7 @@
 
 @theme {
     /* Base colors */
-    --color-body: #fff;
+    --color-body: rgba(247, 245, 242, 1);
     --color-footer: rgba(31, 31, 31, 1);
 
 
@@ -22,7 +22,9 @@
     --color-caption: #B39659;
     --color-border-caption: #B39659;
 
+    --color-card-bg: #fff;
     --color-card-quote: #7C632F;
+    --color-bg-signature: #7C632F;
 
     /*form colors*/
     --color-form-border: rgba(145, 107, 28, 0.61);

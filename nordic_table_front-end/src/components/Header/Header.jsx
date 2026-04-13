@@ -14,42 +14,42 @@ const Header = ({ token, onLogout }) => {
 
   // Get the current location to determine if we are on the home page
   const location = useLocation();
-  // Determine if we are on the home page
-  const isHome = location.pathname === "/";
   // Determine if the user is logged in based on the presence of a token
   const isLoggedIn = Boolean(token);
 
   // Handle link click to close the menu
   const handleLinkClick = () => setMenuOpen(false);
 
+  // Listen for scroll events to update the scrolled state
   useEffect(() => {
-    if (location.pathname !== "/") {
-      // Listen for scroll events to update scrolled state
-      const handleScroll = () => setScrolled(window.scrollY > 0);
-      // Check initial scroll position on mount
-      window.addEventListener("scroll", handleScroll);
+    const handleScroll = () => setScrolled(window.scrollY > 0);
 
-      // Clean up the event listener on unmount
-      return () => window.removeEventListener("scroll", handleScroll);
-    } else {
-      setScrolled(true);
-    }
-  }, [location.pathname]); // Update scrolled state when location changes
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
 
-  // Disable body scroll when menu is open
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [location.pathname]);
+
+  // Disable page scroll while menu is open
   useEffect(() => {
+    // Get the html element to control overflow
+    const html = document.documentElement;
+
+    // When menu is open, disable scrolling on the entire page
     if (menuOpen) {
-      document.body.style.overflow = "hidden";
+      html.style.overflow = "hidden"; // Disable scrolling on the html element
+      document.body.style.overflow = "hidden"; // Disable scrolling on the body element as well for better compatibility
     } else {
-      document.body.style.overflow = "";
+      html.style.overflow = ""; // Re-enable scrolling on the html element
+      document.body.style.overflow = ""; // Re-enable scrolling on the body element
     }
+
     return () => {
+      html.style.overflow = ""; // Clean up on unmount
       document.body.style.overflow = ""; // Clean up on unmount
     };
+    // menuOpen is the only dependency because we want to run this effect whenever the menu state changes
   }, [menuOpen]);
-
-  // Log current location and isHome state
-  useEffect(() => {}, [location.pathname, isHome]);
 
   return (
     <>
