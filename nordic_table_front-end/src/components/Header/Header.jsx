@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, Link } from "react-router-dom";
-import logo from "../../assets/logo/vite.svg";
 
 import clsx from "clsx";
 import BurgerMenu from "./Burger";
@@ -58,7 +57,7 @@ const Header = ({ token, onLogout }) => {
           "fixed top-0 left-0 w-full z-999",
           "flex justify-between items-center",
           "px-4 md:px-6",
-          "bg-menu-bg",
+          "bg-transparent",
         )}
       >
         {/* Overlay */}
@@ -69,20 +68,6 @@ const Header = ({ token, onLogout }) => {
           )}
           onClick={() => setMenuOpen(false)}
         ></div>
-        <div className="relative py-4 md:py-6 shrink-0 cursor-pointer">
-          <Link
-            to="/"
-            onClick={() => {
-              onLogout();
-            }}
-          >
-            <img
-              src={logo}
-              alt="logo"
-              className="w-24 h-24 md:w-24 md:h-12 object-contain"
-            />
-          </Link>
-        </div>
         <div
           className={clsx(
             "fixed top-0 bottom-0 right-0 z-999",
