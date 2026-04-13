@@ -1,5 +1,7 @@
+// api url from .env file
 const API_URL = import.meta.env.VITE_API_BASE_URL;
 
+// Generic function to fetch data from a given endpoint
 const fetchData = async (endpoint) => {
   try {
     const res = await fetch(`${API_URL}/${endpoint}`);
@@ -12,5 +14,6 @@ const fetchData = async (endpoint) => {
   }
 };
 
-export const fetchReviews = () => fetchData("reviews");
-export const fetchBlogs = () => fetchData("blogs");
+// export specific functions for each endpoint
+
+export const fetchDishes = () => fetchData("dishes");

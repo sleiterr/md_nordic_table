@@ -1,8 +1,10 @@
 import React from "react";
 
-const Card = ({ children }) => {
+const Card = ({ children, className }) => {
   return (
-    <div className="max-w-100 md:max-w-115 w-full border border-card-border">
+    <div
+      className={`w-full max-w-[350px] md:max-w-[400px] flex flex-col ${className}`}
+    >
       {children}
     </div>
   );
