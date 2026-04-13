@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { useLocation, Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import clsx from "clsx";
 import BurgerMenu from "./Burger";
 import NavMenu from "./NavMenu";
+import { logos } from "../../assets/logo/index";
 
 const Header = ({ token, onLogout }) => {
   // State to track if the page is scrolled
@@ -55,8 +56,8 @@ const Header = ({ token, onLogout }) => {
       <header
         className={clsx(
           "fixed top-0 left-0 w-full z-999",
-          "flex justify-between items-center",
-          "px-4 md:px-6",
+          "flex justify-between items-center h-24",
+          "px-5",
           "bg-transparent",
         )}
       >
@@ -74,7 +75,6 @@ const Header = ({ token, onLogout }) => {
             "w-full h-auto md:w-200 md:h-full",
             "bg-menu-bg",
             "flex flex-col justify-start items-start",
-            "pt-4 px-4 md:pt-8 md:px-8 gap-10",
             "transition-all duration-500 ease-in-out",
             {
               "opacity-0 translate-x-full pointer-events-none": !menuOpen,
@@ -83,7 +83,15 @@ const Header = ({ token, onLogout }) => {
           )}
           onClick={() => setMenuOpen(false)}
         >
-          <nav className=" md:self-center md:m-auto">
+          <Link to="/" className="pl-4 md:pl-6">
+            <img
+              src={logos.logoBlack}
+              alt="logo"
+              className="w-35 md:w-40 h-auto"
+            />
+          </Link>
+          <div className="border-b border-menu-border w-full" />
+          <nav className="self-center m-auto">
             <NavMenu
               handleLinkClick={handleLinkClick}
               isLoggedIn={isLoggedIn}
@@ -92,7 +100,7 @@ const Header = ({ token, onLogout }) => {
             />
           </nav>
         </div>
-        <div className="fixed z-1000 right-4 top-7 md:top-8 md:right-4 backdrop-blur-sm md:-translate-x-1/2">
+        <div className="absolute z-1000 right-6 top-1/2 -translate-y-1/2 backdrop-blur-sm">
           <BurgerMenu
             scrolled={scrolled}
             isOpen={menuOpen}

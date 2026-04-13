@@ -8,69 +8,51 @@ const NavMenu = ({ handleLinkClick, isLoggedIn, onLogout, token }) => {
 
   return (
     <div className="mt-12 ml-4 md:mt-0 md:ml-0">
-      <ul className="flex flex-col items-start gap-6 w-30">
+      <ul className="flex flex-col justify-center items-center gap-6">
         <li>
-          <a
-            href="#home"
-            smooth={true.toString()}
-            duration={800}
+          <Link
+            to="/"
             className={clsx(
               "relativeking-wide cursor-pointer",
-              "font-bold text-secondary text-2xl md:text-4xl tracking-wide",
-              "hover:font-light transition-all duration-300",
+              "font-cormorant font-medium text-secondary text-3xl md:text-4xl tracking-wide",
+              "hover:text-menu-hover transition-all duration-300",
             )}
             onClick={handleLinkClick}
           >
             Forside
-          </a>
+          </Link>
         </li>
         <li>
-          <a
-            href="#blog"
+          <Link
+            to="/menu"
             smooth={true.toString()}
             duration={800}
             offset={-100}
             className={clsx(
               "relative cursor-pointer",
-              "font-bold text-secondary text-2xl md:text-4xl tracking-wide",
-              "hover:font-light transition-all duration-300",
+              "font-cormorant font-medium text-secondary text-3xl md:text-4xl tracking-wide",
+              "hover:text-menu-hover transition-all duration-300",
             )}
             onClick={handleLinkClick}
           >
-            Blog
-          </a>
+            Menu
+          </Link>
         </li>
         <li className="hidden md:block">
-          <a
-            href="#reviews"
+          <Link
+            to="/booking"
             smooth={true.toString()}
             duration={800}
             offset={-100}
             className={clsx(
               "relative cursor-pointer",
-              "font-bold text-secondary text-2xl md:text-4xl tracking-wide",
-              "hover:font-light transition-all duration-300",
+              "font-cormorant font-medium text-secondary text-3xl md:text-4xl tracking-wide",
+              "hover:text-menu-hover transition-all duration-300",
             )}
             onClick={handleLinkClick}
           >
-            Anmeldelser
-          </a>
-        </li>
-        <li>
-          <a
-            href="#contact"
-            smooth={true.toString()}
-            duration={800}
-            offset={-100}
-            className={clsx(
-              "relative cursor-pointer",
-              "font-bold text-secondary text-2xl md:text-4xl tracking-wide",
-              "hover:font-light transition-all duration-300",
-            )}
-            onClick={handleLinkClick}
-          >
-            Kontakt
-          </a>
+            Book bord
+          </Link>
         </li>
         {isLoggedIn && role === "admin" && (
           <>
@@ -82,8 +64,8 @@ const NavMenu = ({ handleLinkClick, isLoggedIn, onLogout, token }) => {
                 offset={-100}
                 className={clsx(
                   "relative cursor-pointer ",
-                  "font-bold text-secondary text-2xl md:text-4xl tracking-wide",
-                  "hover:font-light transition-all duration-300",
+                  "font-cormorant font-medium text-secondary text-3xl md:text-4xl tracking-wide",
+                  "hover:text-menu-hover transition-all duration-300",
                 )}
                 onClick={() => {
                   handleLinkClick();
@@ -103,8 +85,8 @@ const NavMenu = ({ handleLinkClick, isLoggedIn, onLogout, token }) => {
               offset={-100}
               className={clsx(
                 "relative cursor-pointer ",
-                "font-bold text-secondary text-2xl md:text-4xl tracking-wide",
-                "hover:font-light transition-all duration-300",
+                "font-cormorant font-medium text-secondary text-3xl md:text-4xl tracking-wide",
+                "hover:text-menu-hover transition-all duration-300",
               )}
               onClick={handleLinkClick}
             >
@@ -122,8 +104,8 @@ const NavMenu = ({ handleLinkClick, isLoggedIn, onLogout, token }) => {
               offset={-100}
               className={clsx(
                 "relative cursor-pointer ",
-                "font-bold text-secondary text-2xl md:text-4xl tracking-wide",
-                "hover:font-light transition-all duration-300",
+                "font-cormorant font-medium text-secondary text-3xl md:text-4xl tracking-wide",
+                "hover:text-menu-hover transition-all duration-300",
               )}
               onClick={onLogout}
             >

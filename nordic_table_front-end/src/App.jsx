@@ -10,6 +10,8 @@ import { useNavigate } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header/Header";
 import Home from "./pages/Home/Home";
+import Booking from "./pages/Booking/Booking";
+import Menu from "./pages/Menu/Menu";
 
 function App() {
   // useLocalStorage is a custom hook that allows us to store the token in local storage and keep it in sync with the state
@@ -42,6 +44,8 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/booking" element={<Booking />} />
+          <Route path="/menu" element={<Menu />} />
         </Routes>
       </main>
     </>
