@@ -14,6 +14,43 @@ const fetchData = async (endpoint) => {
   }
 };
 
-// export specific functions for each endpoint
-
+//? export specific functions for each endpoint
 export const fetchDishes = () => fetchData("dishes");
+
+// export async function to fetch a single dish by ID
+export const fetchDishById = async (dishId) => {
+  // if no dishId is provided, return null immediately
+  if (!dishId) return null;
+  // res is the response from the fetch call to the dish endpoint with the provided dishId
+  const response = await fetch(`${API_URL}/dish/${dishId}`);
+  const data = await response.json();
+  return data.data || null;
+};
+
+// deleteDish method to delete a dish by ID
+export const deleteDish = async (dishId) => {
+  const response = await fetch(`${API_URL}/dish/${dishId}`, {
+    method: "DELETE",
+  });
+  return await response.json();
+};
+
+// uspdateDish method PUT request to update a dish by ID with the provided dishData
+export const updateDish = async (dishData) => {
+  const response = await fetch(`${API_URL}/dish`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(dishData),
+  });
+  return await response.json();
+};
+
+// createDish method POST request to create a new dish with the provided dishData
+export const createDish = async (dishData) => {
+  const response = await fetch(`${API_URL}/dish`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(dishData),
+  });
+  return await response.json();
+};
