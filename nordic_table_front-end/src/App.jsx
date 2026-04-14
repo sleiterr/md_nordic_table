@@ -8,10 +8,16 @@ import {
 import { useLocalStorage } from "@uidotdev/usehooks";
 import { useNavigate } from "react-router-dom";
 import "./App.css";
+
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import Header from "./components/Header/Header";
 import LoginLayout from "./components/Auth/LoginLayout";
+import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 import Footer from "./components/Footer/Footer";
 import Home from "./pages/Home/Home";
+import Backoffice from "./pages/Backoffice/Backoffice";
 import Booking from "./pages/Booking/Booking";
 import Menu from "./pages/Menu/Menu";
 
@@ -48,10 +54,22 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/booking" element={<Booking />} />
           <Route path="/menu" element={<Menu />} />
-          <Route path="/login" element={<LoginLayout />} />
+          <Route
+            path="/login"
+            element={<LoginLayout onLogin={handleLogin} />}
+          />
+          <Route
+            path="/backoffice"
+            element={
+              <ProtectedRoute allowedRoles={["admin"]}>
+                <Backoffice token={token} onLogout={handleLogout} />
+              </ProtectedRoute>
+            }
+          />
         </Routes>
       </main>
       <Footer />
+      <ToastContainer position="top-center" autoClose={2500} />
     </>
   );
 }
