@@ -9,6 +9,7 @@ import { useLocalStorage } from "@uidotdev/usehooks";
 import { useNavigate } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 import Home from "./pages/Home/Home";
 import Booking from "./pages/Booking/Booking";
 import Menu from "./pages/Menu/Menu";
@@ -48,6 +49,7 @@ function App() {
           <Route path="/menu" element={<Menu />} />
         </Routes>
       </main>
+      <Footer />
     </>
   );
 }
