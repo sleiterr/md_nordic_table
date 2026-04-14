@@ -56,7 +56,8 @@ const HeroItem = () => {
               to="/menu"
               className={clsx(
                 "bg-transparent! border-btn-outline!",
-                "hover:bg-white/40! hover:backdrop-blur-md hover:border-btn-border!",
+                "hover:bg-white/40! hover:backdrop-blur-md",
+                "inset-ring-btn-outline! focus:ring-btn-outline! focus:ring-1!",
               )}
             >
               Se Menu

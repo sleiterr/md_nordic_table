@@ -1,5 +1,7 @@
 import React from "react";
+import Button from "../Button/Button";
 import Card from "../Card/Card";
+import clsx from "clsx";
 import { useDishes } from "./useDishes";
 
 const DishesSignature = () => {
@@ -26,7 +28,7 @@ const DishesSignature = () => {
     return <p className="font-normal text-2xl text-red-500">{error}</p>;
 
   return (
-    <div>
+    <div className="flex flex-col items-center justify-center">
       <ul className="flex flex-wrap items-center justify-center gap-8">
         {visibleProducts.map((item) => (
           <li key={item._id}>
@@ -67,6 +69,19 @@ const DishesSignature = () => {
           </li>
         ))}
       </ul>
+      <div className="mt-10 md:mt-12 w-full flex justify-center">
+        <Button
+          to="/menu"
+          className={clsx(
+            "font-normal text-secondary! text-base md:text-xl uppercase",
+            "bg-transparent! border-btn-dsih-border!",
+            "hover:bg-btn-bg/10! hover:text-tertiary! hover:border-tertiary!",
+            "inset-ring-btn-dsih-border! focus:ring-btn-dsih-border! focus:ring-1!",
+          )}
+        >
+          Se hele menu
+        </Button>
+      </div>
     </div>
   );
 };
