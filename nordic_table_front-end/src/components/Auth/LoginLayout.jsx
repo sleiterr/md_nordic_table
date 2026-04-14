@@ -2,11 +2,11 @@ import React from "react";
 import AuthHero from "./AuthHero";
 import AuthLandingPage from "./AuthLandingPage";
 
-const LoginLayout = () => {
+const LoginLayout = ({ onLogin }) => {
   return (
     <>
       <AuthHero />
-      <AuthLandingPage />
+      <AuthLandingPage onLogin={onLogin} />
     </>
   );
 };

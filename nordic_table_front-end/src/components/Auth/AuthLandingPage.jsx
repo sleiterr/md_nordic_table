@@ -13,12 +13,12 @@ const pageText = [
   },
 ];
 
-const AuthLandingPage = () => {
+const AuthLandingPage = ({ onLogin }) => {
   return (
     <Section>
       <AuthItem />
       <div className="flex items-center justify-center">
-        <LoginForm />
+        <LoginForm onLogin={onLogin} />
       </div>
     </Section>
   );
