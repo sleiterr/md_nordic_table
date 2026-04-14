@@ -18,17 +18,17 @@ const DishFormUpdate = ({ dish, onClose }) => {
   // values for the form fields, using the existing dish data to pre-populate the form when editing an existing dish.
   const initialValues = {
     title: dish.title || "",
-    author: dish.author || "",
-    teaser: dish.teaser || "",
-    content: dish.content || "",
+    description: dish.description || "",
+    price: dish.price || "",
+    category: dish.category || "",
     image: null,
   };
 
   const validationSchema = Yup.object({
     title: Yup.string().required("Title is required"),
-    author: Yup.string().required("Author is required"),
-    teaser: Yup.string().required("Teaser is required"),
-    content: Yup.string().required("Content is required"),
+    description: Yup.string().required("Description is required"),
+    price: Yup.string().required("Price is required"),
+    category: Yup.string().required("Category is required"),
     // image: Yup.mixed(), // optional
   });
 
@@ -38,9 +38,9 @@ const DishFormUpdate = ({ dish, onClose }) => {
       const formData = new FormData();
       formData.append("id", dish._id);
       formData.append("title", values.title);
-      formData.append("author", values.author);
-      formData.append("teaser", values.teaser);
-      formData.append("content", values.content);
+      formData.append("description", values.description);
+      formData.append("price", values.price);
+      formData.append("category", values.category);
       if (values.image) formData.append("image", values.image);
 
       const res = await fetch(`${API_URL}/dish`, {
@@ -64,9 +64,9 @@ const DishFormUpdate = ({ dish, onClose }) => {
       resetForm({
         values: {
           title: "",
-          author: "",
-          teaser: "",
-          content: "",
+          description: "",
+          price: "",
+          category: "",
           image: null,
         },
       });
@@ -93,9 +93,9 @@ const DishFormUpdate = ({ dish, onClose }) => {
                 values.image
                   ? values.image.name
                   : values.title +
-                    values.author +
-                    values.teaser +
-                    values.content
+                    values.description +
+                    values.price +
+                    values.category
               }
               id="edit-image"
               src={
@@ -113,26 +113,27 @@ const DishFormUpdate = ({ dish, onClose }) => {
               onChange={(e) => setFieldValue("title", e.target.value)}
               placeholder="Enter Title"
             />
+          </div>
+          <div className="flex items-center justify-center gap-6">
             <InputField
-              name="author"
-              value={values.author}
-              onChange={(e) => setFieldValue("author", e.target.value)}
-              placeholder="Enter Author"
+              name="price"
+              value={values.price}
+              onChange={(e) => setFieldValue("price", e.target.value)}
+              placeholder="Enter Price"
+            />
+            <InputField
+              name="category"
+              value={values.category}
+              onChange={(e) => setFieldValue("category", e.target.value)}
+              placeholder="Enter Category"
             />
           </div>
           <div className="flex flex-col items-center justify-center gap-2">
             <TextareaField
-              name="teaser"
-              value={values.teaser}
-              onChange={(e) => setFieldValue("teaser", e.target.value)}
-              placeholder="Enter Teaser"
-              rows={6}
-            />
-            <TextareaField
-              name="content"
-              value={values.content}
-              onChange={(e) => setFieldValue("content", e.target.value)}
-              placeholder="Enter Content"
+              name="description"
+              value={values.description}
+              onChange={(e) => setFieldValue("description", e.target.value)}
+              placeholder="Enter Description"
               rows={6}
             />
           </div>

@@ -15,9 +15,9 @@ const DishFormEditor = () => {
   // current form values and a key to force re-mounting the form for resetting after submission
   const initialValues = {
     title: "",
-    author: "",
-    teaser: "",
-    content: "",
+    description: "",
+    price: "",
+    category: "",
     image: null,
   };
   // State to force re-mounting the form to reset file input after submission
@@ -26,9 +26,9 @@ const DishFormEditor = () => {
   // Validation schema for the form fields
   const validationSchema = Yup.object({
     title: Yup.string().required("Title is required"),
-    author: Yup.string().required("Author is required"),
-    teaser: Yup.string().required("Teaser is required"),
-    content: Yup.string().required("Content is required"),
+    description: Yup.string().required("Description is required"),
+    price: Yup.string().required("Price is required"),
+    category: Yup.string().required("Category is required"),
     // image: Yup.mixed(), // optional
   });
 
@@ -39,9 +39,9 @@ const DishFormEditor = () => {
       // new FormData object to hold the form data, append each field to the FormData object, including the image file if it exists, using the append method which takes the field name and value as arguments
       const formData = new FormData();
       formData.append("title", values.title);
-      formData.append("author", values.author);
-      formData.append("teaser", values.teaser);
-      formData.append("content", values.content);
+      formData.append("description", values.description);
+      formData.append("price", values.price);
+      formData.append("category", values.category);
       // if an image file is selected, append it to the FormData object with the key "image"
       if (values.image) formData.append("image", values.image);
       // Send POST request to API to create a new dish with the form data, await the response and parse it as JSON
@@ -91,26 +91,27 @@ const DishFormEditor = () => {
               onChange={(e) => setFieldValue("title", e.target.value)}
               placeholder="Enter Title"
             />
+          </div>
+          <div className="flex items-center justify-center gap-6">
             <InputField
-              name="author"
-              value={values.author}
-              onChange={(e) => setFieldValue("author", e.target.value)}
-              placeholder="Enter Author"
+              name="price"
+              value={values.price}
+              onChange={(e) => setFieldValue("price", e.target.value)}
+              placeholder="Enter Price"
+            />
+            <InputField
+              name="category"
+              value={values.category}
+              onChange={(e) => setFieldValue("category", e.target.value)}
+              placeholder="Enter Category"
             />
           </div>
           <div className="flex flex-col items-center justify-center gap-2">
             <TextareaField
-              name="teaser"
-              value={values.teaser}
-              onChange={(e) => setFieldValue("teaser", e.target.value)}
-              placeholder="Enter Teaser"
-              rows={6}
-            />
-            <TextareaField
-              name="content"
-              value={values.content}
-              onChange={(e) => setFieldValue("content", e.target.value)}
-              placeholder="Enter Content"
+              name="description"
+              value={values.description}
+              onChange={(e) => setFieldValue("description", e.target.value)}
+              placeholder="Enter Description"
               rows={6}
             />
           </div>
