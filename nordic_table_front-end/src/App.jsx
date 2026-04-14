@@ -9,6 +9,7 @@ import { useLocalStorage } from "@uidotdev/usehooks";
 import { useNavigate } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header/Header";
+import LoginLayout from "./components/Auth/LoginLayout";
 import Footer from "./components/Footer/Footer";
 import Home from "./pages/Home/Home";
 import Booking from "./pages/Booking/Booking";
@@ -21,7 +22,7 @@ function App() {
   const navigate = useNavigate();
 
   // Define routes where the header should be hidden
-  const hideHeaderRoutes = ["/contact-confirmation", "/login", "/backoffice"];
+  const hideHeaderRoutes = ["/backoffice"];
   // Determine if the header should be shown based on the current location
   const showHeader = !hideHeaderRoutes.includes(location.pathname);
 
@@ -47,6 +48,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/booking" element={<Booking />} />
           <Route path="/menu" element={<Menu />} />
+          <Route path="/login" element={<LoginLayout />} />
         </Routes>
       </main>
       <Footer />
