@@ -1,6 +1,7 @@
 import React from "react";
 import BookingCard from "./BookingCard";
 import Section from "../../components/Section/Section";
+import BookingForm from "./BookingForm";
 
 const introText = [
   {
@@ -22,6 +23,9 @@ const BookingIntro = () => {
     <Section>
       <IntroItem />
       <BookingCard />
+      <div className="flex items-start justify-center mt-6 md:mt-12">
+        <BookingForm />
+      </div>
     </Section>
   );
 };

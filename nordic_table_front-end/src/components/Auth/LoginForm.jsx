@@ -58,8 +58,8 @@ export const LoginForm = ({ onLogin }) => {
 
   return (
     <>
-      <FormCard className="w-130! ">
-        <form onSubmit={formik.handleSubmit} className="flex flex-col w-80">
+      <FormCard className=" w-120! py-6 px-4">
+        <form onSubmit={formik.handleSubmit} className="flex flex-col">
           <Input
             type="email"
             name="email"
@@ -98,7 +98,7 @@ const LoginButton = ({ children, className, ...rest }) => {
         {...rest}
         className={clsx(
           "bg-btn-bg border shadow-form-btn border-btn-border",
-          "py-4 px-8 cursor-pointer",
+          "py-4 px-8 mt-4 cursor-pointer",
           "font-normal text-primary text-base md:text-xl uppercase",
           "transition duration-300 ease-in-out",
           "hover:bg-button-hover-bg",
