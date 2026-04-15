@@ -17,6 +17,7 @@ import LoginLayout from "./components/Auth/LoginLayout";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 import Footer from "./components/Footer/Footer";
 import Home from "./pages/Home/Home";
+import Confirmation from "./pages/Booking/Confirmation";
 import Backoffice from "./pages/Backoffice/Backoffice";
 import Booking from "./pages/Booking/Booking";
 import Menu from "./pages/Menu/Menu";
@@ -54,6 +55,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/booking" element={<Booking />} />
           <Route path="/menu" element={<Menu />} />
+          <Route path="/confirmation" element={<Confirmation />} />
           <Route
             path="/login"
             element={<LoginLayout onLogin={handleLogin} />}
