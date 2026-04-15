@@ -17,6 +17,7 @@ import LoginLayout from "./components/Auth/LoginLayout";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 import Footer from "./components/Footer/Footer";
 import Home from "./pages/Home/Home";
+import NotFound from "./pages/NotFound";
 import Confirmation from "./pages/Booking/Confirmation";
 import Backoffice from "./pages/Backoffice/Backoffice";
 import Booking from "./pages/Booking/Booking";
@@ -28,10 +29,9 @@ function App() {
   const location = useLocation();
   const navigate = useNavigate();
 
-  // Define routes where the header should be hidden
-  const hideHeaderRoutes = ["/backoffice"];
-  // Determine if the header should be shown based on the current location
-  const showHeader = !hideHeaderRoutes.includes(location.pathname);
+  // knownRoutes is an array of routes where we want to show the header and footer, we check if the current location is included in this array to conditionally render the header and footer
+  const knownRoutes = ["/", "/booking", "/menu", "/confirmation", "/login"];
+  const showHeader = knownRoutes.includes(location.pathname);
 
   // Handle login by setting the token and navigating to the backoffice
   const handleLogin = (newToken) => {
@@ -68,9 +68,10 @@ function App() {
               </ProtectedRoute>
             }
           />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
-      <Footer />
+      {showHeader && <Footer />}
       <ToastContainer position="top-center" autoClose={2500} />
     </>
   );
