@@ -37,7 +37,7 @@ const BookItem = () => {
           className="flex flex-col items-start justify-center gap-4 md:gap-6"
         >
           <span className={item.captionClass}>{item.caption}</span>
-          <h1 className={item.titleClass}>{item.title}</h1>
+          <h2 className={item.titleClass}>{item.title}</h2>
           <p className={item.textClass}>{item.text}</p>
         </div>
       ))}

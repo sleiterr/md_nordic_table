@@ -21,7 +21,7 @@ const DishesSignature = () => {
 
   if (loading)
     return (
-      <p className="font-normal text-2xl text-green-500">Loading dishes...</p>
+      <p className="font-normal text-2xl text-tertiary">Loading dishes...</p>
     );
 
   if (error)

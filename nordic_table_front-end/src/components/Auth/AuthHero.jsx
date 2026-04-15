@@ -29,7 +29,7 @@ const AuthItem = () => {
     <div>
       {authText.map((item) => (
         <div key={item.id} className="text-center">
-          <h1 className={item.titleClass}>{item.title}</h1>
+          <h2 className={item.titleClass}>{item.title}</h2>
         </div>
       ))}
     </div>
