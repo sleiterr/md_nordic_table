@@ -1,17 +1,20 @@
 import React from "react";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
-// import { toast } from "react-toastify";
 import clsx from "clsx";
 import { useNavigate } from "react-router-dom";
 
 import Input from "./Input";
 import FormCard from "../../components/FormCard/FormCard";
 
+// API_URL is the base URL for the backend API, stored in an environment variable
 const API_URL = import.meta.env.VITE_API_BASE_URL;
 
+// BookingForm component is the main component for the booking page, it contains the form for making a reservation
 const BookingForm = () => {
+  // navigate is a hook from react-router-dom that allows us to navigate programmatically
   const navigate = useNavigate();
+  // initialValues is the initial state of the form, it contains the default values for each field
   const initialValues = {
     name: "",
     email: "",
@@ -20,16 +23,19 @@ const BookingForm = () => {
     time: "",
   };
 
+  // validationSchema is a Yup object that defines the validation rules for each field in the form
   const validationSchema = Yup.object({
     name: Yup.string().required("Navn er påkrævet"),
     email: Yup.string()
       .email("Ugyldig email")
       .required("Skriv venligst din email"),
+    // numberOfGuests must be a number, required, and between 1 and 12
     numberOfGuests: Yup.number()
       .required("Antal gæster er påkrævet")
       .min(1, "Der skal være mindst 1 gæst")
       .max(12, "Der kan være maksimalt 12 gæster"),
     date: Yup.date().required("Dato er påkrævet"),
+    // time must be a string and is required
     time: Yup.string().required("Tidspunkt er påkrævet"),
   });
 
@@ -40,9 +46,11 @@ const BookingForm = () => {
         name: values.name,
         email: values.email,
         numberOfGuests: values.numberOfGuests,
+        // startAt is a combination of date and time in ISO format, which is expected by the backend
         startAt: `${values.date}T${values.time}`,
       };
 
+      // Make a POST request to the booking endpoint with the form values
       const res = await fetch(`${API_URL}/booking`, {
         method: "POST",
         headers: {
@@ -51,8 +59,8 @@ const BookingForm = () => {
         body: JSON.stringify(payload),
       });
 
+      // if statment to check if the response is ok, if it is, reset the form and navigate to the confirmation page with the reservation details in the state
       if (res.ok) {
-        // toast.success(`Tak ${values.name}, din besked er sendt!`);
         resetForm();
         navigate("/confirmation", {
           state: {
