@@ -32,7 +32,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <img src="public/favicon/logoWhite.png" alt="Logo" width="160" height="80">
+  <img src="public/favicon/logoBlack.png" alt="Logo" width="160" height="90">
   <h3 align="center">Nordic Table — Front-end</h3>
   <p align="center">
     Eksamensprojekt: Moderne React + Tailwind frontend til et nordisk restaurant-bookingsystem.
