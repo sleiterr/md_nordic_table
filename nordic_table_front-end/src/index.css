@@ -23,8 +23,13 @@
     ;
 
     /*caption colors*/
+    --color-card-booking: rgba(242, 237, 229, 1);
+
+
+    /*caption colors*/
     --color-caption: #B39659;
     --color-border-caption: #B39659;
+    --color-icon: #916B1C;
 
     --color-card-bg: #fff;
     --color-card-quote: #7C632F;

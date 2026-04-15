@@ -39,7 +39,7 @@ const BannerItem = () => {
           className="flex flex-col items-center justify-center gap-4 md:gap-6 text-center"
         >
           <span className={item.captionClass}>{item.caption}</span>
-          <h1 className={item.titleClass}>{item.title}</h1>
+          <h2 className={item.titleClass}>{item.title}</h2>
           <p className={item.textClass}>{item.text}</p>
           <div className="flex items-center justify-center mt-6 md:mt-8">
             <Button to="/booking" className="text-xs! md:text-xl!">
