@@ -9,7 +9,7 @@ import ImgUploader from "./ImgUploader";
 
 const API_URL = import.meta.env.VITE_API_BASE_URL;
 
-const DishFormUpdate = ({ dish, onClose }) => {
+const DishFormUpdate = ({ dish, onClose, token }) => {
   if (!dish)
     return (
       <p className="font-medium text-xl text-white">Select a dish to edit</p>
@@ -39,12 +39,15 @@ const DishFormUpdate = ({ dish, onClose }) => {
       formData.append("id", dish._id);
       formData.append("title", values.title);
       formData.append("description", values.description);
-      formData.append("price", values.price);
+      formData.append("price", Number(values.price));
       formData.append("category", values.category);
       if (values.image) formData.append("image", values.image);
 
       const res = await fetch(`${API_URL}/dish`, {
         method: "PUT",
+        headers: {
+          Authorization: `Bearer ${token}`, // token Bearer used for authentication, should be available in the component
+        },
         body: formData,
       });
 
@@ -139,8 +142,6 @@ const DishFormUpdate = ({ dish, onClose }) => {
           </div>
           <div className="flex flex-row gap-4 mt-4">
             <Button type="submit">Update Dish</Button>
-          </div>
-          <div className="flex flex-row gap-4 mt-4">
             <Button
               type="button"
               onClick={() => {

@@ -32,7 +32,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <img src="public/favicon/logoBlack.png" alt="Logo" width="160" height="90">
+  <img src="public/favicon/logoBlack.png" alt="Logo" width="300">
   <h3 align="center">Nordic Table — Front-end</h3>
   <p align="center">
     Eksamensprojekt: Moderne React + Tailwind frontend til et nordisk restaurant-bookingsystem.
@@ -183,50 +183,6 @@ For at logge ind som admin (backoffice), brug:
 <p align="right">(<a href="#readme-top">Til toppen</a>)</p>
 
 <!-- ROADMAP -->
-
-## Projektstruktur
-
-```
-nordic_table_front-end/
-├── public/
-│   └── favicon/
-├── src/
-│   ├── assets/
-│   ├── components/
-│   ├── hooks/
-│   ├── pages/
-│   ├── utils/
-│   ├── App.jsx
-│   └── main.jsx
-├── package.json
-├── tailwind.config.js
-├── vite.config.js
-└── README.md
-```
-
-<p align="right">(<a href="#readme-top">Til toppen</a>)</p>
-
-```
-nordic_table_front-end/
-├── public/
-│   └── favicon/
-├── src/
-│   ├── assets/
-│   ├── components/
-│   ├── hooks/
-│   ├── pages/
-│   ├── utils/
-│   ├── App.jsx
-│   └── main.jsx
-├── package.json
-├── tailwind.config.js
-├── vite.config.js
-└── README.md
-```
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- CONTRIBUTING -->
 
 ## Bidrag
 

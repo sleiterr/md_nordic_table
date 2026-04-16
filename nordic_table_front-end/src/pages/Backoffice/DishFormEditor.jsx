@@ -11,7 +11,7 @@ import ImgEdit from "./ImgEdit";
 const API_URL = import.meta.env.VITE_API_BASE_URL;
 
 // Component for creating a new dish post
-const DishFormEditor = () => {
+const DishFormEditor = ({ token }) => {
   // current form values and a key to force re-mounting the form for resetting after submission
   const initialValues = {
     title: "",
@@ -40,13 +40,17 @@ const DishFormEditor = () => {
       const formData = new FormData();
       formData.append("title", values.title);
       formData.append("description", values.description);
-      formData.append("price", values.price);
+      formData.append("price", Number(values.price));
       formData.append("category", values.category);
       // if an image file is selected, append it to the FormData object with the key "image"
       if (values.image) formData.append("image", values.image);
       // Send POST request to API to create a new dish with the form data, await the response and parse it as JSON
       const res = await fetch(`${API_URL}/dish`, {
         method: "POST",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          // token Bearer used for authentication, should be available in the component
+        },
         body: formData,
       });
       // response data from the API after attempting to create a new dish.
@@ -73,7 +77,8 @@ const DishFormEditor = () => {
       onSubmit={handleSubmit}
       enableReinitialize={true}
     >
-      {({ values, setFieldValue }) => (
+      {({ values, setFieldValue, resetForm }) => (
+        // setFieldValue: update form values (esp. file input); resetForm: fully reset the form
         <Form className="flex flex-col justify-center w-full max-w-2xl mx-auto  rounded shadow px-8 py-6 bg-gray-100">
           <p className="p-5 text-xl text-gray-900 font-medium">Add dish</p>
           <div className="mb-8 self-start">
@@ -115,7 +120,26 @@ const DishFormEditor = () => {
               rows={6}
             />
           </div>
-          <Button type="submit">Add Dish</Button>
+          <div className="flex flex-row gap-4 mt-4">
+            <Button type="submit">Add Dish</Button>
+            <Button
+              type="button"
+              onClick={() => {
+                resetForm({
+                  values: {
+                    title: "",
+                    description: "",
+                    price: "",
+                    category: "",
+                    image: null,
+                  },
+                });
+                setFormKey((k) => k + 1);
+              }}
+            >
+              Anuller
+            </Button>
+          </div>
         </Form>
       )}
     </Formik>
