@@ -21,8 +21,12 @@ const Backoffice = ({ token, onLogout }) => {
         <div className="grid grid-rows-1 gap-8">
           <DashboardView setEditDish={setEditDish} />
           <div className="grid grid-cols-2 gap-8">
-            <DishFormEditor />
-            <DishFormUpdate dish={editDish} onClose={handleCloseEdit} />
+            <DishFormEditor token={token} />
+            <DishFormUpdate
+              dish={editDish}
+              onClose={handleCloseEdit}
+              token={token}
+            />
           </div>
         </div>
       </div>

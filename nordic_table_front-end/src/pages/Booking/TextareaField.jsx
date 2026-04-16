@@ -1,7 +1,7 @@
 import { Field, ErrorMessage } from "formik";
 import clsx from "clsx";
 
-const TextareaField = ({ label, name, ...rest }) => (
+const TextareaField = ({ name, ...rest }) => (
   <div className="flex flex-col w-full">
     <Field
       as="textarea"
