@@ -22,11 +22,12 @@ const Header = ({ token, onLogout }) => {
 
   // Listen for scroll events to update the scrolled state
   useEffect(() => {
+    // Function to check if the page is scrolled and update state accordingly
     const handleScroll = () => setScrolled(window.scrollY > 0);
-
+    // Call handleScroll once to set the initial state based on the current scroll position
     handleScroll();
     window.addEventListener("scroll", handleScroll);
-
+    // return a cleanup function to remove the event listener when the component unmounts or when the location changes
     return () => window.removeEventListener("scroll", handleScroll);
   }, [location.pathname]);
 

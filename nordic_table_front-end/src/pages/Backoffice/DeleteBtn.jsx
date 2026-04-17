@@ -1,7 +1,7 @@
 import React from "react";
 import clsx from "clsx";
 
-const DeleteBtn = ({ children, to, className, ...rest }) => {
+const DeleteBtn = ({ children, className, ...rest }) => {
   return (
     <button
       {...rest}
@@ -18,3 +18,5 @@ const DeleteBtn = ({ children, to, className, ...rest }) => {
 };
 
 export default DeleteBtn;
+
+// DeleteBtn component that renders a styled button for confirming or canceling dish deletion, with customizable styles through the className prop and disabled state handling.

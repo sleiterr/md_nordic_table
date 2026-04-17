@@ -83,3 +83,5 @@ const StyledWrapper = styled.div`
 `;
 
 export default Burger;
+
+// StyledWrapper use the styled-components library to create a styled div that contains the styles for the burger menu. The styles include the appearance of the burger icon, the transition effects when toggling the menu, and the changes in appearance when the menu is open or closed. The component uses props ($isOpen and $scrolled) to conditionally apply styles based on the state of the menu and whether the page has been scrolled.

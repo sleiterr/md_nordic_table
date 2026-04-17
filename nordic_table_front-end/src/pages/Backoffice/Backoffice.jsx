@@ -4,6 +4,7 @@ import DishFormEditor from "./DishFormEditor";
 import DishFormUpdate from "./DishFormUpdate";
 import DashboardView from "./DashboardView";
 
+// token, onLogout passed as props from parent component to manage authentication state and logout functionality in the backoffice
 const Backoffice = ({ token, onLogout }) => {
   // State to hold the currently selected dish for editing
   const [editDish, setEditDish] = useState(null);

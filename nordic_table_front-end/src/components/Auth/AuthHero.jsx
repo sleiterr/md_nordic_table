@@ -2,7 +2,7 @@ import React from "react";
 import SectionWrapper from "../Section/SectionWrapper";
 import loginBg from "../../assets/header/headerbg.png";
 
-// button mt-5
+
 const authText = [
   {
     id: 1,

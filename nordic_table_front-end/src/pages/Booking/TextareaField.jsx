@@ -21,3 +21,5 @@ const TextareaField = ({ name, ...rest }) => (
 );
 
 export default TextareaField;
+
+// This TextareaField component is a reusable form textarea field that integrates with Formik for form state management and validation. It accepts props such as name and other textarea attributes, and renders a styled textarea field along with an optional error message display. The component uses clsx for conditional class names to apply consistent styling across different textarea instances in the application.

@@ -11,6 +11,7 @@ const NavMenu = ({
 }) => {
   // Get the current location to determine if we are on the home page
   const location = useLocation();
+  // role token is decoded to get the user's role, which is used to conditionally render the admin dashboard link in the navigation menu. If there is no token, role will be null.
   const role = token ? jwtDecode(token).role : null;
 
   // Handle click on home link to scroll to top if already on home page

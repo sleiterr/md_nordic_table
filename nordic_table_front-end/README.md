@@ -208,6 +208,17 @@ Distributed for educational purposes. See `LICENSE.txt` for more information.
 
 <!-- CONTACT -->
 
+### Projekt Rapport
+
+Project Report: [Project_Report/Nordic_Table_PDF.pdf](./Project_Report/Nordic_Table_PDF.pdf)  
+Fuld PDF-rapport med:
+
+- Beskrivelse af projektet.
+- Udviklingsproces.
+- Datahåndtering i React.
+- Anvendelse af API og admin login.
+- Vurdering af eget arbejde og brug af AI.
+
 ## Kontakt
 
 Forfatter: Oleg Troian (MediaCollege, 2026)  
@@ -215,7 +226,7 @@ Email: oleg4troian@gmail.com
 Portfolio: [olegtr.netlify.app](https://olegtr.netlify.app/)  
 LinkedIn: [linkedin.com/in/oleg-troian-031922250](https://www.linkedin.com/in/oleg-troian-031922250/)  
 GitHub: [github.com/sleiterr](https://github.com/sleiterr)  
-Se udvidet dokumentation i [dokumentation.md](./dokumentation.md)
+Se udvidet dokumentation i [dokumentation_Oleg_Troian.md](./dokumentation_Oleg_Troian.md)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

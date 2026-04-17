@@ -7,7 +7,6 @@ import FooterLinks from "./FooterLinks";
 
 const Footer = () => {
   return (
-    //  border-t border-white
     <footer className="flex flex-col items-center justify-center bg-footer">
       <div
         className={clsx(

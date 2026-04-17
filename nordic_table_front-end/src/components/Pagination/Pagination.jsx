@@ -47,3 +47,5 @@ const Pagination = ({
 };
 
 export default Pagination;
+
+// Paginatio custom component with prev and next buttons, accepts currentPage, totalPage, setCurrentPage, setDirection, and optional icons and styling classes as props.

@@ -1,5 +1,6 @@
 import React from "react";
 
+// Data for the social media links in the footer, each object represents a link with its properties such as id, href, className for styling, and the SVG icon to be displayed.
 const wrapperData = [
   {
     id: 1,

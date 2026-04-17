@@ -15,3 +15,5 @@ const SummaryTableCell = ({ align = "left", children }) => {
 };
 
 export default SummaryTableCell;
+
+// td - table cell component with dynamic text alignment and styling using clsx for conditional class names.

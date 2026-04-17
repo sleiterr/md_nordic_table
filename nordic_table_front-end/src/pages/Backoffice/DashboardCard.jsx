@@ -10,3 +10,5 @@ const DashboardCard = ({ label, children }) => {
 };
 
 export default DashboardCard;
+
+// custom card component used in the dashboard view to display different sections such as the list of dishes and the forms for adding and editing dishes. It takes a label prop for the section title and children prop for the content to be displayed within the card.

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { fetchDishes } from "../../../utils/api";
 
+// Custom hook to manage fetching dishes data, along with loading and error states
 export function useDishes() {
   const [dishes, setDishes] = useState([]);
   const [loading, setLoading] = useState(false);

@@ -51,3 +51,5 @@ const BannerItem = () => {
     </>
   );
 };
+
+// ReservationBanner.jsx is a React component that displays a reservation banner with a background image of a restaurant. It uses a SectionWrapper component to set the background and contains a BannerItem component that renders the reservation text and a button to book a table. The reservation text is stored in an array of objects, allowing for easy customization and localization. The component is styled using Tailwind CSS classes for responsive design and visual appeal.

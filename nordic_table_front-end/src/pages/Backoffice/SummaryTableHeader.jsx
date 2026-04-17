@@ -18,3 +18,5 @@ const SummaryTableHeader = ({ align = "left", children }) => {
 };
 
 export default SummaryTableHeader;
+
+// th - table header cell component with dynamic text alignment and styling using clsx for conditional class names, including nth-child selectors for alternating row colors.

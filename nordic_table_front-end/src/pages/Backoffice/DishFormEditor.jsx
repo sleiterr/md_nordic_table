@@ -146,6 +146,7 @@ const DishFormEditor = ({ token }) => {
   );
 };
 
+// Reusable button component with default styling and support for different types (submit, button, etc.)
 const Button = ({ children, type = "button", ...rest }) => {
   return (
     <button

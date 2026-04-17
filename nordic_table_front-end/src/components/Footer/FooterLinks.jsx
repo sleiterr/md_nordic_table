@@ -2,6 +2,7 @@ import React from "react";
 import clsx from "clsx";
 import { Link } from "react-router-dom";
 
+// Array of link objects for the footer, each containing a name and path for navigation
 const links = [
   { name: "Book bord", path: "/booking" },
   { name: "Personale", path: "/login" },
