@@ -1,7 +1,6 @@
-import { Field, ErrorMessage } from "formik";
-import clsx from "clsx";
+import { Field, ErrorMessage } from "formik"; // Importing necessary components from Formik for form handling and validation error display
 
-const TextareaField = ({ label, name, ...rest }) => (
+const TextareaField = ({ name, ...rest }) => (
   <div className="flex flex-col w-full">
     <Field
       as="textarea"

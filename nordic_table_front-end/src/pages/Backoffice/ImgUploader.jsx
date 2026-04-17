@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 const ImgUploader = ({ label, id, onChange, src }) => {
+  // State to hold the preview URL of the selected image file
   const [preview, setPreview] = useState(null);
 
   // Clear preview when src or image is cleared
@@ -13,6 +14,7 @@ const ImgUploader = ({ label, id, onChange, src }) => {
     if (src === null) setPreview(null);
   }, [src]);
 
+  // Handle file input change, update preview and call onChange prop, filleter to only accept image files, [0] get first from file list.
   const handleChange = (e) => {
     const file = e.target.files[0];
     if (file) {

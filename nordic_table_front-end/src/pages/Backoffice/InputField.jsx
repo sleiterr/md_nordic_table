@@ -1,5 +1,5 @@
 import React from "react";
-import { Field, ErrorMessage } from "formik";
+import { Field, ErrorMessage } from "formik"; // Importing Field and ErrorMessage components from Formik for form handling and validation error display
 
 const InputField = ({ label, name, ...rest }) => {
   return (
@@ -23,3 +23,5 @@ const InputField = ({ label, name, ...rest }) => {
 };
 
 export default InputField;
+
+// InputField component is a reusable form input component that integrates with Formik for form state management and validation, providing a consistent styling and error handling for text inputs across the application.

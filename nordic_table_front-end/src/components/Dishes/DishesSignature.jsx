@@ -5,6 +5,7 @@ import clsx from "clsx";
 import { useDishes } from "./useDishes";
 
 const DishesSignature = () => {
+  // Custom hook to fetch dishes data, along with loading and error states
   const { dishes, loading, error } = useDishes();
 
   // object to map category keys to display titles

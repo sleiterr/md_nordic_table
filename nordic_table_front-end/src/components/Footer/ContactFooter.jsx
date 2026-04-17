@@ -50,3 +50,5 @@ export const ContactFooter = () => {
     </div>
   );
 };
+
+// Contact Footer component that displays contact information with icons and styling for the footer section of the website. It uses React Icons for visual representation and Tailwind CSS for styling. The contact information includes the address, phone number, and email, each with corresponding icons and links where applicable.

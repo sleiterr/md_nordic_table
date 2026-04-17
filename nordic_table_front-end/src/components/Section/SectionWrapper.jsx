@@ -23,3 +23,5 @@ const SectionWrapper = ({
 };
 
 export default SectionWrapper;
+
+// Custom SectionWrapper component that provides a flexible and reusable section layout with optional background image support. It accepts children elements, custom class names, inline styles, an optional ID, and a background image source. The component uses Tailwind CSS classes for styling and ensures that the background image is properly displayed and responsive across different screen sizes.

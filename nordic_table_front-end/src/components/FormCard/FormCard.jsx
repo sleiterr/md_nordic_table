@@ -14,3 +14,5 @@ const FormCard = ({ label, children, className }) => {
 };
 
 export default FormCard;
+
+// Custom card component to wrap form elements with consistent styling, takes a label for the card header and children for the form content, also accepts additional className for custom styling if needed.

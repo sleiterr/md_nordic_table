@@ -5,6 +5,7 @@ import clsx from "clsx";
 
 const Confirmation = () => {
   const location = useLocation();
+  // Get booking details from location state
   const { name, date, time } = location.state || {};
 
   return (

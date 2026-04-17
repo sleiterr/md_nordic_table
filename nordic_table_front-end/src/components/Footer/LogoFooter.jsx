@@ -4,9 +4,11 @@ import { logos } from "../../assets/logo/index";
 import { LinkWrapper } from "./LinkWrapper";
 
 const LogoFooter = () => {
+  // Hooks to access current location and navigation function from react-router-dom
   const location = useLocation();
   const navigate = useNavigate();
 
+  // Handle click on the logo: if already on the homepage, scroll to top, otherwise navigate to homepage
   const handleClick = () => {
     if (location.pathname === "/") {
       window.scrollTo({ top: 0, behavior: "smooth" });

@@ -31,3 +31,5 @@ const Input = ({ label, name, ...rest }) => {
 };
 
 export default Input;
+
+// This Input component is a reusable form input field that integrates with Formik for form state management and validation. It accepts props such as label, name, and other input attributes, and renders a styled input field along with an optional label and error message display. The component uses clsx for conditional class names to apply consistent styling across different input types.

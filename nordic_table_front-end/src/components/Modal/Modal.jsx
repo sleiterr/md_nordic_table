@@ -27,3 +27,5 @@ export function Modal({ show, children, onClose }) {
     </Transition>
   );
 }
+
+// Modal window component from @headlessui/react, used for displaying forms in the backoffice. It provides a backdrop and handles the opening/closing animations. The content of the modal is passed as children, allowing for flexible use across different forms (e.g., adding/editing dishes). The onClose prop is called when the modal should be closed, such as when clicking outside the panel or pressing the escape key.

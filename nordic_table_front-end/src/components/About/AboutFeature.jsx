@@ -1,6 +1,7 @@
 import React from "react";
 import clsx from "clsx";
 
+// Array of statistics to display in the About section, each object contains an id, value, and label for a specific statistic about the restaurant.
 const statAbout = [
   { id: 1, value: "12", label: "Reter på Menuen" },
   { id: 2, value: "6", label: "Års erfaring" },

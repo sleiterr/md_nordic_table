@@ -50,3 +50,5 @@ const ConfirmDeleteModal = ({ onConfirm, onClose }) => {
 };
 
 export default ConfirmDeleteModal;
+
+// ConfirmDeleteModal component that displays a confirmation dialog when the user attempts to delete a dish, with options to confirm or cancel the deletion. { Modal } is a reusable modal component that handles the display and backdrop, while the content of the modal is defined within this component.

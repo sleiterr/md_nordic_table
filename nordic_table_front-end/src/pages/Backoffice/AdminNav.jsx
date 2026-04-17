@@ -6,15 +6,19 @@ import { BiHomeAlt2 } from "react-icons/bi";
 import clsx from "clsx";
 
 const AdminNav = ({ token, onLogout }) => {
+  // true if user is authenticated
   const isLoggedIn = Boolean(token);
+  // navigation hook from react-router
   const navigate = useNavigate();
 
+  // useEffect to check authentication status on component mount and redirect to login if not authenticated
   useEffect(() => {
     if (!isLoggedIn) {
       navigate("/login");
     }
   }, [isLoggedIn, navigate]);
 
+  // Handler for logout button click, calls the onLogout prop function to clear authentication state in parent component
   const handleLogout = () => {
     onLogout();
   };
@@ -51,3 +55,5 @@ const AdminNav = ({ token, onLogout }) => {
 };
 
 export default AdminNav;
+
+// Admin Nav component with authentication check and logout functionality.

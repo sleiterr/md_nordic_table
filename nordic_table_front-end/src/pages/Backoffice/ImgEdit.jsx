@@ -4,6 +4,7 @@ const ImgEdit = ({ label, id, onChange }) => {
   const [preview, setPreview] = useState(null);
 
   const handleChange = (e) => {
+    // filter to only accept image files, [0] get first from file list.
     const file = e.target.files[0];
     if (file) {
       setPreview(URL.createObjectURL(file));

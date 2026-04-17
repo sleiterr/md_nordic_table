@@ -9,6 +9,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import clsx from "clsx";
 
+// Access API URL from environment variables
 const API_URL = import.meta.env.VITE_API_BASE_URL;
 
 export const LoginForm = ({ onLogin }) => {
@@ -38,6 +39,7 @@ export const LoginForm = ({ onLogin }) => {
         const token = data?.data?.token;
         const isTokenValid = typeof token === "string" && token.length > 0;
 
+        // if statment to handle successful login, show a success toast, call the onLogin callback with the token, decode the token to get the user information, and navigate to the appropriate page based on the user's role
         if (res.ok && data?.status === "ok" && isTokenValid) {
           toast.success("Login was successful");
           onLogin(token);

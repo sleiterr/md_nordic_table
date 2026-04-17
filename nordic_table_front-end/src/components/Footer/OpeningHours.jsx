@@ -1,5 +1,6 @@
 import React from "react";
 
+// Array of objects representing the opening hours for each day of the week, with properties for the day, time, and CSS classes for styling the text.
 const hoursData = [
   {
     id: 1,
@@ -61,3 +62,5 @@ const OpeningHours = () => {
 };
 
 export default OpeningHours;
+
+// Opening hours data structure with day, time, and CSS classes for styling the text. The component maps over this data to render a list of opening hours in the footer.

@@ -4,6 +4,7 @@ import Section from "../Section/Section";
 import AboutFeature from "./AboutFeature";
 import clsx from "clsx";
 
+// Array of objects containing the text content and styling classes for the About section, used to render the content dynamically in the AboutItem component.
 const aboutText = [
   {
     id: 1,
@@ -20,6 +21,7 @@ const aboutText = [
       "font-light text-about text-base md:text-xl leading-[24px] md:leading-[32px] max-w-[320px] md:max-w-[560px]",
   },
 ];
+
 
 const About = () => {
   return (

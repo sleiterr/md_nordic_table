@@ -4,6 +4,7 @@ import { IoMdTime } from "react-icons/io";
 import { FaPhoneAlt } from "react-icons/fa";
 import CardBooking from "../../components/Card/CardBooking";
 
+// Array of booking information objects, each containing an id, icon, title, text, and CSS classes for styling the icon, title, and text. This data is used to render the booking information cards on the Booking page.
 const bookingData = [
   {
     id: 1,
@@ -24,6 +25,7 @@ const bookingData = [
     textClass: "font-light text-secondary text-sm md:text-lg",
   },
 ];
+// Array of contact information objects, each containing an id, type (phone or email), href for the link, and label for display. This data is used to render the contact information in the booking card.
 const contacts = [
   {
     id: 1,

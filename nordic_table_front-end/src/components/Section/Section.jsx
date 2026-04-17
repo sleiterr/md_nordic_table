@@ -13,3 +13,5 @@ const Section = ({ children, className = "", style = {}, id }) => {
 };
 
 export default Section;
+
+// Custom Section component that serves as a wrapper for different sections of the website. It accepts children elements, custom class names, inline styles, and an optional id for navigation. The component uses Tailwind CSS classes to ensure consistent spacing and responsive design across different screen sizes. It centers its content both vertically and horizontally, making it a versatile container for various types of content throughout the site.

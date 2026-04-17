@@ -102,6 +102,7 @@ const DashboardView = ({ setEditDish }) => {
           </tr>
         ))}
       </SummaryTable>
+      {/* Modal for confirming dish deletion */}
       {showModal && (
         <ConfirmDeleteModal
           onConfirm={() => {
