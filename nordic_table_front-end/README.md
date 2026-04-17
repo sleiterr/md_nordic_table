@@ -51,6 +51,14 @@
 </div>
 
 <!-- TABLE OF CONTENTS -->
+
+## Design
+
+Se det originale Figma-design her:  
+[Figma Nordic Table](https://www.figma.com/design/wkR44pM1jKeatUzAC1Op8r/Nordic-Table--Copy-?node-id=104-1126&m=dev)
+
+Her kan du se det visuelle design og UI-prototyper for projektet.
+
 <details>
   <summary>Table of Contents</summary>
   <ol>
